@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax js</title>
+</head>
+<body>
+    <button id="btn">GET</button>
+    <dev id="txt"></dev>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var txt = document.getElementById('txt');
+
+        btn.addEventListener('click', loadfile)
+
+        function loadfile() {
+
+            // Create XHR Object
+            var xhr = new XMLHttpRequest();
+
+            // OPEN - type, url/file, async
+            xhr.open('GET', 'sample.txt');
+
+            xhr.onload = function() {
+                if (this.status == 200) {    // 200 = "OK" , 404 = "Not Found"
+                    console.log(this);
+                }
+
+                txt.innerHTML = this.responseText;
+                
+            }
+
+            // send resquest
+            xhr.send();
+        }
+
+        
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
