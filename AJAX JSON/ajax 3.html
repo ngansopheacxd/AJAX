@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+	<button id="btn">GET</button>
+
+	<br><br>
+
+	<h1>GET FORM</h1>
+	<form action="process.php" method="get" >
+		<input id="txt" name="name" type="text" value="">
+		<input id="submit" type="submit" value="submit">
+	</form>
+
+	<h1>AJAX GET FORM</h1>
+	<form id="getform" >
+		<input id="txt2" name="name" type="text" value="">
+		<input id="submit2" type="submit" value="submit">
+	</form>
+
+	<h1>POST FORM</h1>
+	<form action="process.php" method="post" >
+		<input id="txt" name="name" type="text" value="">
+		<input id="submit" type="submit" value="submit">
+	</form>
+
+	<h1>AJAX POST FORM</h1>
+	<form id="postform" >
+		<input id="txt3" name="name" type="text" value="">
+		<input id="submit2" type="submit" value="submit">
+	</form>
+
+
+	<script>
+		
+		var btn = document.getElementById('btn');
+		var getform = document.getElementById('getform');
+
+		btn.addEventListener('click', loadFile);
+
+
+		// AJAX GET FORM
+		getform.addEventListener('submit', getName);
+		function getName(e) {
+			e.preventDefault();
+
+			var name = document.getElementById("txt2").value;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'process.php?name='+name ,true)
+			xhr.onload = function () {
+				console.log(this.responseText);
+			}
+			xhr.send();
+		}
+
+		// AJAX POST FORM
+		postform.addEventListener('submit', postName);
+		function postName(e) {
+			e.preventDefault();
+
+			var name  = document.getElementById("txt3").value;
+			var params= "name="+name;
+			var xhr   = new XMLHttpRequest();
+			xhr.open('POST', 'process.php?name='+name ,true)
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			xhr.onload = function () {
+				console.log(this.responseText);
+			}
+			xhr.send(params);
+		}
+	</script>
+	
+</body>
+</html>
