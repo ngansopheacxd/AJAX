@@ -5,7 +5,7 @@ $output = '';
 
 $search = $_POST["search"];
 
-$sql = " SELECT * FROM tbl_customer WHERE 
+$sql = " SELECT * FROM customers WHERE 
    CustomerName LIKE '%".$search."%'
 	OR Address LIKE '%".$search."%' 
 	OR City LIKE '%".$search."%' 
