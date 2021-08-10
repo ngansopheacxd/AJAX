@@ -35,10 +35,11 @@ include('database_connection.php');
         	<br />
         	<h2 align="center">Advance Ajax Product Filters in PHP</h2>
         	<br />
-            <div class="col-md-3">                				
-								
+            <div class="col-md-3"> 
+            		
                 <div class="list-group">
 					<h3>Brand</h3>
+                    <button class="btn btn-primary allProduct" >ALL PRODUCT</button> 
                     <div style="height: 450px; overflow-y: auto; overflow-x: hidden;">
 					<?php
 
@@ -50,7 +51,9 @@ include('database_connection.php');
                     {
                     ?>
                     <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector brand" value="<?php echo $row['product_brand']; ?>"  > <?php echo $row['product_brand']; ?></label>
+                        <label>
+                            <input type="checkbox" class="common_selector brand" value="<?php echo $row['product_brand']; ?>"  > <?php echo $row['product_brand']; ?>
+                        </label>
                     </div>
                     <?php
                     }
@@ -81,11 +84,11 @@ include('database_connection.php');
 <script>
 $(document).ready(function(){
 
-    filter_data();
+    // filter_data();
 
     function filter_data()
     {
-        $('.filter_data').html('<div id="loading" style="" ></div>');
+        $('.filter_data').html('<div id="loading" ></div>');
         var action = 'fetch_data';
 
         var brand = get_filter('brand');
@@ -110,6 +113,10 @@ $(document).ready(function(){
     }
 
     $('.common_selector').click(function(){
+        filter_data();
+    });
+
+    $('.allProduct').click(function(){
         filter_data();
     });
 
