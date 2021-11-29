@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;  
+}
+$exo:'Exo 2';
+$bg_color:#e8edf0;
+$gradient:#2ef4f7;
+.d_flex{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+}
+body{
+  @extend .d_flex;
+  background-color:$bg_color;
+  font-family: $exo;
+  overflow:hidden;
+  position: relative;
+  height:100vh;
+}
+
+.container{
+  display:block;
+  max-width:1150px;
+  width:90%;
+  .tab_container{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom:15px;
+    ul{
+      margin:0;
+      padding:0;
+      list-style-type: none;
+      @extend .d_flex;
+      justify-content: flex-end;
+      width:100%;
+      li{
+        width:150px;
+        height:50px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        cursor:pointer;
+        position:relative;
+        font-size:20px;
+        +li{
+          margin-left:15px;
+        }
+        &.active{
+          color:tomato;
+          &:after{
+            content:"";
+            position:absolute;
+            left:50%;
+            bottom:5px;
+            width:30px;
+            height:2px;
+            background-color:tomato;
+            transform:translateX(-50%);
+          }
+        }
+       
+      }
+    }
+  }
+}
+.product_data{
+  width:100%;
+  @extend .d_flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  .item{
+    width:calc(95% / 4);
+    img{
+      width:100%;
+    }
+  }
+}

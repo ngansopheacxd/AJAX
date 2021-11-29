@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.d_flex, body, .container .tab_container ul, .product_data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+body {
+  background-color: #e8edf0;
+  font-family: "Exo 2";
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.container {
+  display: block;
+  max-width: 1150px;
+  width: 90%;
+}
+
+.container .tab_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.container .tab_container ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.container .tab_container ul li {
+  width: 150px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 20px;
+}
+
+.container .tab_container ul li + li {
+  margin-left: 15px;
+}
+
+.container .tab_container ul li.active {
+  color: tomato;
+}
+
+.container .tab_container ul li.active:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  width: 30px;
+  height: 2px;
+  background-color: tomato;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.product_data {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+}
+
+.product_data .item {
+  width: calc(95% / 4);
+}
+
+.product_data .item img {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */

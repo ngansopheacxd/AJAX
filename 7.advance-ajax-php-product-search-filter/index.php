@@ -52,7 +52,8 @@ include('database_connection.php');
                     ?>
                     <div class="list-group-item checkbox">
                         <label>
-                            <input type="checkbox" class="common_selector brand" value="<?php echo $row['product_brand']; ?>"  > <?php echo $row['product_brand']; ?>
+                            <input type="checkbox" class="common_selector brand" value="<?php echo $row['product_brand']; ?>"  >
+                            <?php echo $row['product_brand']; ?>
                         </label>
                     </div>
                     <?php
